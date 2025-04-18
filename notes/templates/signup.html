@@ -1,0 +1,72 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block body %}
+
+{% if error == "no" %}
+    <script>
+        alert('Signup successful!');
+        window.location.href = '{% url "login" %}';
+    </script>
+{% elif error == "yes" %}
+    <script>
+        alert('Something went wrong, please try again.');
+    </script>
+{% endif %}
+
+<br><br><br><br>
+<section class="signup" id="signup">
+    <h1 class="heading">User Signup Form</h1>
+    <div class="row">
+        <form method="post" class="col-md-6">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <input type="text" placeholder="Enter First Name" class="form-control" name="firstname" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="text" placeholder="Enter Last Name" class="form-control" name="lastname" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="tel" placeholder="Enter Contact Number" class="form-control" name="contact" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="email" placeholder="Enter Email Address" class="form-control" name="emailid" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="password" placeholder="Password" class="form-control" name="password" required>
+            </div>
+
+            <div class="mb-3">
+                <select name="branch" class="form-select" required>
+                    <option value="">--- Select Branch ---</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Electric">Electric</option>
+                    <option value="IT">IT</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <select name="role" class="form-select" required>
+                    <option value="">--- Select Role ---</option>
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                </select>
+            </div>
+
+            <input type="submit" class="btn btn-primary mt-2" value="Submit">
+        </form>
+
+        <div class="col-md-6">
+            <img src="{% static 'images/Taking notes-amico.png' %}" alt="Signup Image" class="img-fluid">
+        </div>
+    </div>
+</section>
+
+{% endblock %}
