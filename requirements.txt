@@ -1,0 +1,7 @@
+Django>=4.0,<5.0
+pytz
+sqlparse
+asgiref
+bootstrap4 
+django-crispy-forms 
+crispy-bootstrap5 
