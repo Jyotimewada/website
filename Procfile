@@ -1,1 +1,1 @@
-
+web: gunicorn NotesSharingProject.wsgi
