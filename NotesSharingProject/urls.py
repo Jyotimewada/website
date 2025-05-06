@@ -52,4 +52,4 @@ urlpatterns = [
 
     # Fixing 'all_notes'
     path('all_notes/', views.all_notes, name='all_notes'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
