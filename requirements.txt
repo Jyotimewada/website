@@ -5,3 +5,4 @@ asgiref
 bootstrap4 
 django-crispy-forms 
 crispy-bootstrap5 
+Gunicorn 
